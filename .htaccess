@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+AddDefaultCharset utf-8
+RewriteEngine On
+RewriteRule ^$ /public/ [L]
+RewriteRule (.*) /public/$1 [L]
+</IfModule>
