@@ -3,9 +3,8 @@
 
 * Скрипт для базы данных лежит в [db_mymvc.sql](https://github.com/yelzhx/mymvc2/blob/master/db_mymvc.sql)
 * БД необходимо назвать db_mymvc, либо поменять настройки в файле [mymvc2/config/db.php](https://github.com/yelzhx/mymvc2/blob/master/config/db.php)
-* изменить ```php
-<?php
-return [
+* изменить 
+```phpreturn [
     'dsn' => 'mysql:host=localhost;dbname=название БД;charset=utf8',
     'username' => 'Имя пользователя',
     'password' => 'Ваш пароль',
