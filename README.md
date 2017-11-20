@@ -1,14 +1,11 @@
 # mymvc2
 ### фреймворк на PHP
 
-Скрипт для базы данных лежит в [db_mymvc.sql](https://github.com/yelzhx/mymvc2/blob/master/db_mymvc.sql)
-БД необходимо назвать db_mymvc,
-либо поменять настройки в файле [mymvc2/config/db.php](https://github.com/yelzhx/mymvc2/blob/master/config/db.php)
-изменить ```phpConfig::set('db.db_name','здесь название БД');```
-файлы приложения необходимо вставить непосредственно в root директорию,
-либо произвести настройки в файлах C:\Windows\System32\drivers\etc\host и
-конфигурационном файле apache.
-в базе есть 1 пользователь, имя пользователя **user1**, пароль **123456**
+* Скрипт для базы данных лежит в [db_mymvc.sql](https://github.com/yelzhx/mymvc2/blob/master/db_mymvc.sql)
+* БД необходимо назвать db_mymvc, либо поменять настройки в файле [mymvc2/config/db.php](https://github.com/yelzhx/mymvc2/blob/master/config/db.php)
+* изменить ```phpConfig::set('db.db_name','здесь название БД');```
+* файлы приложения необходимо вставить непосредственно в root директорию, либо произвести настройки в файлах C:\Windows\System32\drivers\etc\host и конфигурационном файле apache.
+* в базе есть 1 пользователь, имя пользователя **user1**, пароль **123456**
 ---
 ### изменения:
 * убрал **?>** в конце файлов
