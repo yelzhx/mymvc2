@@ -25,7 +25,7 @@
                 <label for="amount">Баланс</label>
             </td>
             <td>
-                <label for="username"><?=$amount?></label>
+                <label for="username"><?=$amount?>.00</label>
             </td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@
                 <label for="get_money">Вывести</label>
             </td>
             <td>
-                <input type="text" name="get_money" value="0" style="text-align: right; "> тенге
+                <input type="text" name="get_money" value="0" style="text-align: right; "> .00 тенге
             </td>
         </tr>
         <tr>

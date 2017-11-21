@@ -9,5 +9,5 @@
 return [
     'dsn' => 'mysql:host=localhost;dbname=db_mymvc;charset=utf8',
     'username' => 'root',
-    'password' => '',
+    'password' => 'ms2525',
 ];

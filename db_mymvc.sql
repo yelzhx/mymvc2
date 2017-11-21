@@ -35,7 +35,7 @@ CREATE TABLE users (
   id INT(11) NOT NULL AUTO_INCREMENT,
   username VARCHAR(50) NOT NULL,
   password VARCHAR(32) NOT NULL,
-  amount INT(11) DEFAULT 0,
+  amount INT(11) UNSIGNED DEFAULT 0,
   is_active TINYINT(1) DEFAULT 1,
   PRIMARY KEY (id),
   UNIQUE INDEX username (username)

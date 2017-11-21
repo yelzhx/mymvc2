@@ -63,7 +63,7 @@ class User extends \vendor\core\base\Model
             $balance = $user->amount-$money;
             if($balance>=0){
                 if($this->query("update users set amount=? where id=?",[$balance, $user->id])) {
-                    return [true, "$money тенге успешно выведены"];
+                    return [true, "$money тенге 0 тиын(копеек) успешно выведены"];
                 }
             }
 
