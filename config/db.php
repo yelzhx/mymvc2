@@ -8,5 +8,5 @@
 return [
     'dsn' => 'mysql:host=localhost;dbname=db_mymvc;charset=utf8',
     'username' => 'root',
-    'password' => 'ms2525',
+    'password' => '',
 ];
