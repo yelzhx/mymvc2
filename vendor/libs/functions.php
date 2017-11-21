@@ -46,6 +46,15 @@ function get_session($key){
     return false;
 }
 
+function my_session_start(){
+    /*if(session_status()==PHP_SESSION_DISABLED) {
+        session_start();
+    }*/
+    session_write_close();
+    session_start();
+
+}
+
 function get_session_clear($key){
     global $ses;
 
@@ -79,6 +88,8 @@ function destroy_sessions(){
     my_session_start();
     session_destroy();
     session_write_close();
+    global $ses;
+    $ses=array();
 }
 
 function mlog_warning($name,$message){
@@ -93,14 +104,6 @@ function mlog_error($name,$message){
     $log->error($message);
 }
 
-function my_session_start(){
-    /*if(session_status()==PHP_SESSION_DISABLED) {
-        session_start();
-    }*/
-    session_write_close();
-    session_start();
-
-}
 
 function session_to_array(){
     my_session_start();
