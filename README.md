@@ -24,7 +24,8 @@ return [
 * а также после подключения к mysql через PDO. Выходила ошибка, видимо блокировалась запись в сессию.
 ---
 ### изменения за 21.11.2017:
-* удалил .idea из репозитория и в .gitignore добавил .idea и [config/db.php](https://github.com/yelzhx/mymvc2/blob/master/config/db.php)  и файл логов [tmp/app.log](https://github.com/yelzhx/mymvc2/blob/master/tmp/app.log)
+* удалил .idea из репозитория 
+* в .gitignore добавил .idea и [config/db.php](https://github.com/yelzhx/mymvc2/blob/master/config/db.php)  и файл логов [tmp/app.log](https://github.com/yelzhx/mymvc2/blob/master/tmp/app.log)
 * изменил скрипт для создания базы данных [db_mymvc.sql](https://github.com/yelzhx/mymvc2/blob/master/db_mymvc.sql), сделал поле **amount беззнаковым** (другая проверка на **увести баланс в минус** есть в моделе [User](https://github.com/yelzhx/mymvc2/blob/master/app/models/User.php), которая срабатывает в момент вывода денег
 ```php<?php
 ...
