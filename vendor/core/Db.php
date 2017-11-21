@@ -19,6 +19,7 @@ class Db
 
     protected function __construct()
     {
+        my_session_start();
         $db = require ROOT . '/config/db.php';
         $options = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

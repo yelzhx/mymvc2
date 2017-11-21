@@ -18,6 +18,7 @@ class User extends \vendor\core\base\Model
     public $is_active;
     public static function login()
     {
+
         $username = !empty(trim($_POST["username"])) ? trim($_POST["username"]) : null;
         $password = !empty(trim($_POST["password"])) ? trim($_POST["password"]) : null;
         if($username && $password){
@@ -27,7 +28,8 @@ class User extends \vendor\core\base\Model
                 //echo "$username $password {$user->username} {$user->password}";
                 $md5hash=md5($password);
                 if($md5hash == $user->password){
-                    $_SESSION['user']['id']=$user->id;
+                    set_session('user',['id' => $user->id]);
+                    //$_SESSION['user']['id']=$user->id;
                     return $user;
                     /*foreach ($user as $key => $value){
                         if($key != 'password') {
@@ -45,8 +47,10 @@ class User extends \vendor\core\base\Model
     public static function getUserInfo()
     {
         $id = 0;
-        if (isset($_SESSION['user']['id'])) {
-            $id = (int)$_SESSION['user']['id'];
+        global $ses;
+        if (isset($ses['user']['id'])) {
+            global $ses;
+            $id = (int)$ses['user']['id'];
             $model = new User();
             $user = $model->findOne($id, 'id', '\app\models\User');
             if ($user) {
@@ -68,6 +72,7 @@ class User extends \vendor\core\base\Model
             }
 
         }
+
         return [false, "Произошла ошибка вовремя вывода $money тенге"];
 
     }

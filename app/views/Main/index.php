@@ -17,7 +17,7 @@
                 <label for="username">Пользователь</label>
             </td>
             <td>
-                <label for="username"><?=$username?></label>
+                <label for="username"><?=(isset($username)) ? $username : ""?></label>
             </td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
                 <label for="amount">Баланс</label>
             </td>
             <td>
-                <label for="username"><?=$amount?>.00</label>
+                <label for="username"><?=(isset($amount)) ? $amount : ""?>.00</label>
             </td>
         </tr>
         <tr>

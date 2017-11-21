@@ -14,7 +14,9 @@ define('LIBS', dirname(__DIR__) . 'vendor/libs');
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
 
+$ses=array();
 require "../vendor/libs/functions.php";
+$ses=session_to_array();
 require __DIR__ . "/../vendor/autoload.php";
 /*spl_autoload_register(function($class){
     $file = ROOT . '/' . str_replace('\\','/',$class) . '.php';
@@ -23,9 +25,8 @@ require __DIR__ . "/../vendor/autoload.php";
         require_once $file;
     }
 });*/
-
-session_start();
-
+//session_start();
+//print_r($_SESSION);
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)/?(?P<alias>[a-z-]+)?$');

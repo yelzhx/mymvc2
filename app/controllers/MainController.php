@@ -19,8 +19,8 @@ class MainController extends \vendor\core\base\Controller
     {
 
         // create a log channel
-
         if(!empty($_POST)){
+
             $user = new User();
             $money_got = $user->getMoney();
             if($money_got[0]){
@@ -28,7 +28,8 @@ class MainController extends \vendor\core\base\Controller
                 redirect();
             }
             else{
-                set_session('error', $money_got[1]);
+                set_session('error', [$money_got[1],10]);
+
                 redirect();
 
             }
@@ -62,7 +63,6 @@ class MainController extends \vendor\core\base\Controller
         $this->set(compact('title','header'));
         // create a log channel
 
-
         if(!empty($_POST)){
             //$user = new User();
             $user = User::login();
@@ -76,10 +76,17 @@ class MainController extends \vendor\core\base\Controller
             else{
                 set_session('error', 'Логин и пароль введены неверно!');
                 mlog_warning('login', 'Неудачная попытка авторизоваться'); // использование MONOLOG функция из functions.php
-                redirect();
+                redirect('/main/login');
             }
 
         }
+        else{
+            $user = User::getUserInfo();
+            if($user){
+                redirect();
+            }
+        }
+
 
     }
 
